@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
 import {auth} from '../../firebase.init'
+import { toast, ToastContainer } from 'react-toastify';
 
 const SignUp = () => {
 
@@ -11,9 +12,11 @@ const SignUp = () => {
     const [password, setPassword] = useState(' ')
     const [confirmPassword, setConfirmPassword] = useState(' ')
     const [error, setError] = useState('')
+    const [profilePic,setProfilePic] = useState({})
 const [agree,setAgree] = useState(false)
 const [displayName, setDisplayName] = useState('');
-  const [photoURL, setPhotoURL] = useState('');
+    const [photoURL, setPhotoURL] = useState('');
+    console.log(profilePic)
 const [updateProfile, updating, error3] = useUpdateProfile(auth);
     console.log(email, name, password, confirmPassword)
     const [
@@ -39,7 +42,10 @@ const [updateProfile, updating, error3] = useUpdateProfile(auth);
         setConfirmPassword(e.target.value);
         console.log(e.target.value)
     }
-
+    const handleProfilePic = e => {
+        setProfilePic(e.target.files[0]?.name)
+      //  console.log(e.target.files[0]?.name)
+    }
    
 
     const handleCreateUser = async e => {
@@ -56,12 +62,12 @@ const [updateProfile, updating, error3] = useUpdateProfile(auth);
 
       
            await createUserWithEmailAndPassword(email, password)
-           await updateProfile({ displayName : name});
-           alert('Updated profile');
+           await updateProfile({ displayName : name,photoURL:profilePic});
+           toast('Profile create');
            navigate('/shop')
      
     }
-    
+ 
     return (
         <div className='form-container'>
 
@@ -86,6 +92,10 @@ const [updateProfile, updating, error3] = useUpdateProfile(auth);
                         <label htmlFor='confirm-password'>Confirm-password</label>
                         <input onBlur={handleConfirmPasswordBlur} type='password' name='password' placeholder='confirm your password' required />
                     </div>
+                    <div className="input-group">
+                        <label htmlFor='Profile picture'>Profile picture</label>
+                        <input onBlur={handleProfilePic} type='file' name='image' />
+                    </div>
 
                     <input onClick={()=>setAgree(!agree) }type='checkbox' name='terms' id="terms" />
                     <label className={ agree ? ' text-primary':' text-danger'}htmlFor="terms">Accept Terms and Conditions</label>
@@ -107,6 +117,7 @@ const [updateProfile, updating, error3] = useUpdateProfile(auth);
                     Already Have an Account?<Link className='form-link' to='/login'>Sign-In</Link>
 
                 </p>
+                <ToastContainer />
             </div>
         </div>
     );

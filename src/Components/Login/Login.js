@@ -119,11 +119,14 @@ const Login = () => {
                     <input className='form-submit' type='submit' value='SignIn' />
 
                 </form>
-                <div className='d-flex align-items-center'>
-                <div style={{ height: '1px' }} className='bg-primary w-50'></div>
-                <p className='mt-2 px-2'>or</p>
-                <div style={{ height: '1px' }} className='bg-primary w-50'></div>
-            </div>
+
+                <div className='or-style'>
+                <div style={{ height: '1px',width:'50%',backgroundColor: 'black',marginRight: '20px'}} className='w-50'></div>
+                <p className='mt-2 px-2'> or </p>
+                <div style={{ height: '1px',width:'50%',backgroundColor: 'black',marginLeft: '20px'}} className=' w-50'></div>
+                </div>
+                
+
                 <button onClick={handleGoogleSignIn}className="google-sign">
                     <div>
                         <img src={image} alt=''/>

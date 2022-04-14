@@ -42,7 +42,7 @@ const [user] = useAuthState(auth)
                 <form onSubmit={handleCreateUser}>
                     <div className="input-group">
                         <label htmlFor='text'>Name</label>
-                        <input onBlur={handleNameBlur} type='text' name='name' placeholder='Enter your name' required />
+                        <input value={user?.displayName} onBlur={handleNameBlur} type='text' name='name' placeholder='Enter your name' required />
                     </div>
                     <div className="input-group">
                         <label htmlFor='email'>Email</label>

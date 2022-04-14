@@ -13,7 +13,11 @@ const Header = () => {
     };
     console.log(user)
     
-  
+    // use profile-pic
+
+    
+    const avater = image
+    const userImg = user?.photoURL ? user?.photoURL : avater;
     return (
         <nav className='header'>
             <img src={logo} alt='' />
@@ -35,8 +39,8 @@ const Header = () => {
             </div>
         
             <Link style={{ color: "White"} }to="/shop">Name: {user? user.displayName : "Login-first"}</Link>
-             {user ? <img className="pp-img"src={user.photoURL} alt='' /> : <img className="pp-img"src={image} alt='' />}
            
+            <img className="pp-img"src={userImg} alt='' />
         </nav>
     );
 };
