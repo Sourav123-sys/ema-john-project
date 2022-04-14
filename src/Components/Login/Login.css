@@ -1,0 +1,119 @@
+.form-container{
+   width:600px;
+   margin:0 auto;
+   border :1px solid black;
+   box-sizing: border-box;
+   border-radius: 5px;
+   display:flex;
+   justify-content: center;
+   margin-top:20px;
+   box-shadow: -5px 5px 5px rgb(72, 62, 64);
+   margin-bottom: 20px;
+   background-image:linear-gradient(to right, #e2c20a70, #db6e1400);
+}
+
+.form-title{
+    font-size:35px;
+    font-weight: 400px;
+    color:rgb(204, 51, 13);
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+}
+.input-group label{
+    display: block;
+    margin-left:5px;
+    font-size:20px;
+}
+.input-group input{
+    width: 400px;
+    height: 55px;
+    border :2px solid rgb(117, 71, 71);
+    box-sizing: border-box;
+    border-radius: 5px;
+    font-size: 24px;
+}
+.input-group{
+    margin:20px;
+}
+.form-submit{
+    width:100%;
+    height:55px;
+    border-radius: 20px;
+    border:none;
+    background-image:linear-gradient(to right, rgb(16, 13, 204), rgb(19, 209, 216));
+    font-size: 30px;
+    font-family:monospace;
+    cursor:pointer;
+}
+.form-submit:hover{
+    background-image:linear-gradient(to right, rgb(19, 209, 216), rgb(16, 13, 204));
+    color:rgb(15, 15, 15);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    border:2px solid rgb(10, 10, 10);
+}
+
+.form-link{
+    color:rgb(241, 65, 1);
+    text-decoration: none;
+    font-weight:200px;
+    margin-left: 5px;
+}
+
+.google-sign{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15px;
+    cursor:pointer;
+    width: 100%;
+    height: 50px;
+    border-radius: 20px;
+    border:none;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    background-color:whitesmoke
+}
+.google-sign img{
+    width:30px;
+    height:30px;
+  
+    border-radius: 50%;
+}
+.google-sign p{
+    font-size: 20px;
+    margin-left: 20px;
+}
+.github-sign{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15px;
+    cursor:pointer;
+    width: 100%;
+    height: 50px;
+    border-radius: 20px;
+    border:none;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    background-color:whitesmoke
+}
+.github-sign img{
+    width:80px;
+    height:40px;
+  
+    border-radius: 50%;
+}
+.github-sign p{
+    font-size: 20px;
+    margin-left: 20px;
+}
+.text-danger{
+    color:red;
+}
+.reset{
+    color:rgb(243, 6, 6);
+    font-weight:200px;
+    cursor: pointer;
+}
+#terms{
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
